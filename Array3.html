@@ -12,8 +12,6 @@
     <font size="9" id="retorno1"></font>
     <font size="9" id="retorno2"></font>
 
-
-
     <script>
 
         const hamb = ["X1", "X2", "X3"];
@@ -25,100 +23,73 @@
         let beb = '';
 
         let ped1 = Number(prompt("Bem-vindo a hamburgueria do seu Zé\nQual lanche você irá escolher? \n(1) = X1 R$3,00 \n(2) = X2 R$4,00\n(3) = X3 R$5,00  \nDigite o número do lanche que você quer pedir "))
-
-        while (ped1 > 3 || ped1 < 1) {
+        F
+        while (ped1 > 3 || ped1 < 1 || isNaN(ped1) || ped1 % 1 != 0 || /^\d+$/.ped1) {
             alert("Opção inválida, escolha um número do cardápio")
             ped1 = Number(prompt("Digite um número de 1 a 3 para escolher o lanche correspondente do cardápio \n(1) = X1 R$3,00 \n(2) = X2 R$4,00\n(3) = X3 R$5,00"))
-
         }
-
         let ped2 = Number(prompt("Qual complemento você irá escolher? \n(1) = Nuggets R$2,00 \n(2) = Batata Frita R$3,00"))
-
-        while (ped2 > 2 || ped2 < 1) {
+        while (ped2 > 3 || ped2 < 1 || isNaN(ped2) || ped2 % 1 != 0 || /^\d+$/.ped2) {
             alert("Número inválido, digite um número de 1 a 2")
             ped2 = Number(prompt("Qual complemento você irá escolher? \n(1) = Nuggets R$2,00 \n(2) = Batata Frita R$3,00"))
-
         }
-
-        let ped3 = Number(prompt("Qual a bebida você irá escolher? \n(1) = Coca-cola R$4,50 \n(2) = Fanta R$4,50 \n(3) = Água R$2,00"))
-
-        while (ped1 > 3 || ped1 < 1) {
+        let ped3 = Number(prompt("Qual a bebida você irá escolher? \n(1) = Coca-cola R$4,00 \n(2) = Fanta R$4,00 \n(3) = Água R$2,00"))
+        while (ped3 > 3 || ped3 < 1 || isNaN(ped3) || ped3 % 1 != 0 || /^\d+$/.ped3) {
             alert("Opção inválida, escolha um número do cardápio")
-            ped3 = Number(prompt("Qual a bebida você irá escolher? \n(1) = Coca-cola R$4,50 \n(2) = Fanta R$4,50 \n(3) = Água R$2,00"))
-
+            ped3 = Number(prompt("Qual a bebida você irá escolher? \n(1) = Coca-cola R$4,00 \n(2) = Fanta R$4,00 \n(3) = Água R$2,00"))
         }
-
         let pedid1 = '';
         let pedid2 = '';
         let pedid3 = '';
-
-
         switch (ped1) {
             case 1:
                 han = Number(3)
-                pedid1 = hamb[0]
+                pedid1 = hamb[0] + "  (R$3,00)"
                 break;
             case 2:
                 han = Number(4)
-                pedid1 = hamb[1]
-
+                pedid1 = hamb[1] + "  (R$4,00)"
                 break;
             case 3:
                 han = Number(5)
-                pedid1 = hamb[1]
-
+                pedid1 = hamb[2] + "  (R$5,00)"
                 break;
-
             default:
                 break;
         }
-
         switch (ped2) {
             case 1:
                 comp = Number(2)
-                pedid2 = complement[0]
+                pedid2 = complement[0] + "  (R$2,00)"
                 break;
             case 2:
                 comp = Number(3)
-                pedid2 = complement[1]
-
+                pedid2 = complement[1] + "  (R$3,00)"
                 break;
-
             default:
                 break;
         }
-
         switch (ped3) {
             case 1:
                 beb = Number(4);
-                pedid3 = bebidas[0]
+                pedid3 = bebidas[0] + "  (R$4,00)"
                 break;
             case 2:
                 beb = Number(4)
-                pedid3 = bebidas[1]
-
-
+                pedid3 = bebidas[1] + "  (R$4,00)"
                 break;
             case 3:
                 beb = Number(2)
-                pedid3 = bebidas[2]
-
+                pedid3 = bebidas[2] + "  (R$2,00)"
                 break;
-
             default:
                 break;
         }
-
         let pedido = "O seu pedido é: </br>" + pedid1 + "</br>" + pedid2 + "</br>" + pedid3 + "</br></br>";
         let total = "O valor total do seu pedido é: " + (han + comp + beb) + " Reais" + "<br>";
-
         document.getElementById("retorno1").innerHTML = pedido;
         document.getElementById("retorno2").innerHTML = total;
-
-
-
     </script>
-
 </body>
 
 </html>
